@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue
@@ -22,7 +22,7 @@ public class User {
     @Column(nullable = false, length = 120, unique = true)
     private String email;
 
-    public User() {
+    public UserEntity() {
     }
 
     public Long getId() {

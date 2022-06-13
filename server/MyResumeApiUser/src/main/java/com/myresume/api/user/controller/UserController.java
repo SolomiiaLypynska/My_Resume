@@ -1,6 +1,6 @@
 package com.myresume.api.user.controller;
 
-import com.myresume.api.user.entity.User;
+import com.myresume.api.user.entity.UserEntity;
 import com.myresume.api.user.model.CreateUserModel;
 import com.myresume.api.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ public class UserController {
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE},
     produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<User> createUser(@Valid @RequestBody CreateUserModel userRequestModel) {
-        User user = userService.createUser(userRequestModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    public ResponseEntity<UserEntity> createUser(@Valid @RequestBody CreateUserModel userRequestModel) {
+        UserEntity userEntity = userService.createUser(userRequestModel);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userEntity);
     }
 }

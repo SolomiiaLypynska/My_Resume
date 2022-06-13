@@ -8,7 +8,7 @@
 		<version>2.6.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.myresume.api.user</groupId>
+	<groupId>com.myresume.api.userEntity</groupId>
 	<artifactId>MyResumeApiUser</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MyResumeApiUser</name>
@@ -65,6 +65,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 			<version>2.6.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
 		</dependency>
 
 	</dependencies>
