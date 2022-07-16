@@ -4,6 +4,7 @@ import com.myresume.api.user.entity.UserEntity;
 import com.myresume.api.user.model.CreateUserModel;
 import com.myresume.api.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +19,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private Environment environment;
+
     @GetMapping("/status/check")
     public String status() {
-        return "Working!!";
+
+        return "Working - " + environment.getProperty("token.secret");
     }
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE},
